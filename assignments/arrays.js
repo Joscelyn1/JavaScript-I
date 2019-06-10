@@ -125,13 +125,37 @@ let carModels = [];
 
 // ==== Challenge 4 ====
 // The accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.
+
+function logCarYears(inventory) {
+
 let carYears = [];
-console.log();
+
+for (let element of inventory) {
+    carYears.push(element['car_year']);
+}
+
+return carYears;
+}
+
+logCarYears(inventory);
+console.log(logCarYears(inventory));
 
 // ==== Challenge 5 ====
-// The car lot manager needs to find out how many cars are older than the year 2000. Using the carYears array you just created, find out how many cars were made before the year 2000 by populating the array oldCars and logging it's length.
-let oldCars = [];
-console.log(); 
+// The car lot manager needs to find out how many cars are older than the year 2000. 
+//Using the carYears array you just created, find out how many cars were made before the year 2000 by populating 
+//the array oldCars and logging its length.
+
+function logOldCars(inventory) {
+    const carYears = logCarYears(inventory);
+    let oldCars = [];
+    let counter = 0;
+    for (let element of carYears) {
+        if (element < 2000) oldCars.push(element);
+    }
+    return oldCars.length;
+}
+
+console.log(logOldCars(inventory)); 
 
 // ==== Challenge 6 ====
 // A buyer is interested in seeing only BMW and Audi cars within the inventory.  Return an array that only contains BMW and Audi cars.  Once you have populated the BMWAndAudi array, use JSON.stringify() to show the results of the array in the console.
