@@ -45,8 +45,6 @@ const antonietta = {
   "gender": "F"
 }
 
-// Write your intern objects here:
-
 
 // ==== Challenge 2: Reading Object Data ==== 
 // Once your objects are created, log out the following requests from HR into the console:
@@ -111,9 +109,9 @@ function sayHello() {
 
 parent.sayHello = sayHello();
 
-child.sayHello = sayHello();
+parent.child.sayHello = sayHello();
 
-grandchild.sayHello = sayHello();
+parent.child.grandchild.sayHello = sayHello();
 
 // Log the parent object's name
 
